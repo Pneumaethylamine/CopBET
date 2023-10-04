@@ -1,4 +1,4 @@
-% out = CopBET_DCC_entropy(in,varargin)
+% out = CopBET_DCC_entropy(in,compute,varargin)
 %
 % Copenhagen Brain Entropy Toolbox: Dynamic conditional correlation entropy
 % Evaluates DCC entropy as in Barrett et al., 2020. The DCC toolbox is run
@@ -11,7 +11,7 @@
 %
 % Input:
 %   in: a matrix (nxp,n>1) or a table where the first column contains
-%   matrices (in cells)g, e.g., different subjects or scan sessions.
+%   matrices (in cells) e.g., regional timeseries for each scan session.
 %   compute: If not interested in running the very long computations, a
 %   path can be specified to the location of saved DCC matrices
 %   
