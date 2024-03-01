@@ -1,4 +1,4 @@
-% out = CopBET_DCC_entropy(in,varargin)
+% out = CopBET_DCC_entropy(in,compute,varargin)
 %
 % Copenhagen Brain Entropy Toolbox: Dynamic conditional correlation entropy
 % Evaluates DCC entropy as in Barrett et al., 2020. The DCC toolbox is run
