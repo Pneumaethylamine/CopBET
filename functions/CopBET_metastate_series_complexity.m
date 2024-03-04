@@ -98,10 +98,21 @@ cencorr = corr(centroids');
 for k = 1:numClusters
     [~,idx(k)] = min(cencorr(:,k));
 end
+
 for k = 1:numClusters
     if idx(idx(k))~=k
-        error('Wrong metastate grouping')
+        warning('Metastate grouping not clear - trying an alterantive clustering strategy')
+        
+        min_val = min(min(cencorr(:,:)));
+        [x,y] = find(min_val == cencorr);
+        idx(x(1)) = x(2);
+        idx(x(2)) = x(1);
+        others = setdiff(possible_states, x);
+        idx(others(1)) = others(2);
+        idx(others(2)) = others(1);
+        break
     end
+    
 end
 
 partition1 = [1,idx(1)];
